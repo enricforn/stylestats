@@ -48,7 +48,7 @@ class Analyzer {
     };
 
     // analyze rules
-    this.rules.forEach(function (rule) {
+    this.rules.forEach((rule) => {
       if (Array.isArray(rule.declarations)) {
         result.cssDeclarations.push({
           selector: rule.selectors,
@@ -214,7 +214,7 @@ class Analyzer {
 
     // Sort `color` property.
     let trimmedColors = _.without(result.uniqueColors, 'TRANSPARENT', 'INHERIT');
-    let formattedColors = trimmedColors.map(function (color) {
+    let formattedColors = trimmedColors.map((color) => {
       let formattedColor = color;
       if (/^#([0-9A-F]){3}$/.test(formattedColor)) {
         formattedColor = color.replace(/^#(\w)(\w)(\w)$/, '#$1$1$2$2$3$3');
